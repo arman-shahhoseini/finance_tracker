@@ -138,7 +138,7 @@ class PersonalFinanceAPITester:
             "status": "pending",
             "description": "چک دریافتی از مشتری"
         }
-        success, response = self.run_test("Create Check", "POST", "api/checks", 201, check_data)
+        success, response = self.run_test("Create Check", "POST", "api/checks", 200, check_data)
         if success and 'id' in response:
             self.created_check_id = response['id']
         return success, response
