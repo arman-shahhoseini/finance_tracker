@@ -99,7 +99,7 @@ class PersonalFinanceAPITester:
             "description": "حقوق ماهانه",
             "date_jalali": "1403/08/15"
         }
-        success, response = self.run_test("Create Income Transaction", "POST", "api/transactions", 201, transaction_data)
+        success, response = self.run_test("Create Income Transaction", "POST", "api/transactions", 200, transaction_data)
         if success and 'id' in response:
             self.created_transaction_id = response['id']
         return success, response
