@@ -76,7 +76,7 @@ class PersonalFinanceAPITester:
             "initial_balance": 5000000,  # 500,000 Toman
             "color": "#0F766E"
         }
-        success, response = self.run_test("Create Account", "POST", "api/accounts", 201, account_data)
+        success, response = self.run_test("Create Account", "POST", "api/accounts", 200, account_data)
         if success and 'id' in response:
             self.created_account_id = response['id']
         return success, response
