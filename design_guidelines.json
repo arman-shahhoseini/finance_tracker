@@ -1,0 +1,126 @@
+{
+  "design_system": {
+    "name": "Khesht (The Brick) - Solid Financial Foundations",
+    "identity": {
+      "archetype": "Organic & Earthy (Trust, Growth, Calm)",
+      "vibe": "Grounded, Matte, Physical, Persian Modern",
+      "core_philosophy": "Finance is not just numbers; it's life's architecture. The UI should feel like a well-crafted ledger—tactile, clear, and enduring.",
+      "anti_patterns": [
+        "No generic 'Fintech Blue' (#007AFF).",
+        "No pure white (#FFFFFF) backgrounds everywhere; use 'Paper' tones.",
+        "No flat, soulless gradients. Use texture or solid blocks.",
+        "No 'Inter' font. Use Vazirmatn for Farsi and Manrope for English."
+      ]
+    },
+    "typography": {
+      "font_family": {
+        "farsi": "Vazirmatn, sans-serif",
+        "english": "Manrope, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-4xl font-bold tracking-tight lg:text-5xl",
+        "h2": "text-3xl font-semibold tracking-tight",
+        "h3": "text-2xl font-semibold tracking-tight",
+        "body": "text-base leading-relaxed",
+        "small": "text-sm font-medium text-muted-foreground"
+      },
+      "rules": [
+        "Use 'Vazirmatn' for all UI text (Labels, Headings, Buttons).",
+        "Use 'Manrope' ONLY for English numbers (prices, dates) and code snippets.",
+        "RTL Direction: Ensure 'dir=rtl' is set on the root html tag.",
+        "Letter Spacing: Farsi requires 0 or slightly negative tracking. Do not use wide tracking."
+      ]
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "DEFAULT": "#0F766E",
+          "foreground": "#FFFFFF",
+          "description": "Persian Teal - Deep, spiritual, trustworthy."
+        },
+        "secondary": {
+          "DEFAULT": "#F5F5F4",
+          "foreground": "#1C1917",
+          "description": "Warm Stone - The color of unbleached paper."
+        },
+        "accent": {
+          "DEFAULT": "#EA580C",
+          "foreground": "#FFFFFF",
+          "description": "Burnt Terracotta - For actions and alerts."
+        },
+        "background": "#FAFAF9",
+        "surface": "#FFFFFF",
+        "text": {
+          "primary": "#1C1917",
+          "secondary": "#57534E",
+          "muted": "#A8A29E"
+        },
+        "border": "#E7E5E4"
+      },
+      "gradients": "None. Use solid colors or subtle noise textures."
+    },
+    "layout": {
+      "grid_system": "Bento Grid (Mode B - High Density)",
+      "spacing": {
+        "container_padding": "p-6 md:p-8 lg:p-12",
+        "gap": "gap-6",
+        "radius": "rounded-xl"
+      },
+      "rtl_rules": [
+        "Sidebar: Fixed on the RIGHT side.",
+        "Main Content: Margin Right (mr-64) instead of Margin Left.",
+        "Flex Direction: 'flex-row' automatically reverses in RTL, but verify alignment.",
+        "Icons: Flip directional icons (arrows, chevrons) using 'rtl:rotate-180'."
+      ]
+    },
+    "components": {
+      "cards": {
+        "style": "Flat, White Surface, 1px Border (Stone-200), Soft Shadow (Shadow-sm).",
+        "hover": "hover:border-teal-600/50 hover:shadow-md transition-all duration-300"
+      },
+      "buttons": {
+        "primary": "bg-teal-700 text-white hover:bg-teal-800 rounded-lg px-6 py-2 font-medium shadow-sm",
+        "secondary": "bg-stone-100 text-stone-900 hover:bg-stone-200 rounded-lg px-6 py-2 font-medium",
+        "ghost": "text-stone-600 hover:text-teal-700 hover:bg-teal-50 rounded-lg px-4 py-2"
+      },
+      "inputs": {
+        "style": "bg-white border-stone-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 rounded-lg text-right dir-rtl"
+      },
+      "charts": {
+        "library": "react-chartjs-2",
+        "style": "Minimalist. Hide grid lines. Use palette colors (Teal, Terracotta, Stone). Rounded bars."
+      }
+    },
+    "visual_enhancers": {
+      "texture": "Add a subtle 'noise' opacity-5 overlay to the main background to simulate paper.",
+      "decorations": "Use abstract geometric shapes (Persian tile inspired) in faint SVG patterns on the sidebar background.",
+      "shadows": "shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
+    },
+    "assets": {
+      "icons": "Lucide React (Stroke width 1.5px)",
+      "images": [
+        {
+          "category": "background_texture",
+          "url": "https://images.unsplash.com/photo-1761888856976-c4bc8303f65f?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "description": "Soft abstract shapes for login/welcome screens (if needed)."
+        }
+      ]
+    },
+    "tech_stack_instructions": {
+      "framework": "React (JS)",
+      "styling": "Tailwind CSS",
+      "icons": "lucide-react",
+      "charts": "chart.js react-chartjs-2",
+      "date_handling": "date-fns-jalali (for Shamsi calendar)",
+      "currency_formatting": "Intl.NumberFormat('fa-IR', { style: 'currency', currency: 'IRR' })"
+    },
+    "universal_guidelines": [
+      "Always add 'data-testid' to interactive elements.",
+      "Ensure high contrast for text (APCA standards).",
+      "Do not use gradients for text.",
+      "Use 'gap' for spacing, avoid margins on children.",
+      "RTL First: Test everything in RTL mode."
+    ]
+  }
+}
