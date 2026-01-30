@@ -20,7 +20,7 @@ app.add_middleware(
 
 # Database
 MONGO_URL = os.environ.get("MONGO_URL")
-DB_NAME = os.environ.get("DB_NAME")
+DB_NAME = os.environ.get("DB_NAME", "personal_finance")
 client = MongoClient(MONGO_URL)
 db = client[DB_NAME]
 
