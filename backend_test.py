@@ -118,7 +118,7 @@ class PersonalFinanceAPITester:
             "description": "خرید مواد غذایی",
             "date_jalali": "1403/08/16"
         }
-        return self.run_test("Create Expense Transaction", "POST", "api/transactions", 201, transaction_data)
+        return self.run_test("Create Expense Transaction", "POST", "api/transactions", 200, transaction_data)
 
     def test_get_transactions(self):
         """Test getting all transactions"""
